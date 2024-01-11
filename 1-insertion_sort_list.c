@@ -9,20 +9,21 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *actual, *auxprev, *auxnext;
 
-    actual = *list;
-   
+	actual = *list;
+
 	while (actual->next != NULL)
 	{
-         auxnext = actual->next;
+		auxnext = actual->next;
 		if (actual->n > actual->next->n)
-		{   
-            auxnext = actual->next;
+		{
+			auxnext = actual->next;
 			auxprev = actual->prev;
-			actual->prev = actual->next;
-			actual->next = actual->next->next;
 			auxnext->prev = auxprev;
 			auxnext->next = actual;
-            print_list(*list);
+			actual->prev = actual->next;
+			actual->next = actual->next->nxet;
+
+			print_list(*list);
 		}
 		actual = auxnext;
 	}
