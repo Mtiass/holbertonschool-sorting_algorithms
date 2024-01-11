@@ -7,7 +7,7 @@
 */
 void insertion_sort_list(listint_t **list)
 {
-	struct listint_t *actual, *auxprev, *auxnext;
+	listint_t *actual, *auxprev, *auxnext;
     
     actual = *list;
 
