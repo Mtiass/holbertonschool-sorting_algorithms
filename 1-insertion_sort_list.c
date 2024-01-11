@@ -16,13 +16,11 @@ void insertion_sort_list(listint_t **list)
 		auxnext = actual->next;
 		if (actual->n > actual->next->n)
 		{
-			auxnext = actual->next;
 			auxprev = actual->prev;
-			auxnext->prev = auxprev;
-			auxnext->next = actual;
 			actual->prev = actual->next;
 			actual->next = actual->next->next;
-
+			auxnext->prev = auxprev;
+			auxnext->next = actual;
 			print_list(*list);
 		}
 		actual = auxnext;
