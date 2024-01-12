@@ -28,14 +28,22 @@ void insertion_sort_list(listint_t **list)
 				change1->prev = change2;
 				if (bfchange1 != NULL)
 					bfchange1->next = change2;
-					
+				else
+				{
+					*list = change2;
+				}	
 				change1 = *list;
-				print_list(*list);	
+				change2 = change1->next;
+				afchange2 = change2->next;
+				bfchange1 = change1->prev;
+				print_list(*list);
 			}
 			else
 			{
 				change1 = change1->next;
 				change2 = change1->next;
+				afchange2 = change2->next;
+				bfchange1 = change1->prev;
 			}
 			
 		}
