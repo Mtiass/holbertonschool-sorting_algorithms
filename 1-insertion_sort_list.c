@@ -10,9 +10,9 @@ void insertion_sort_list(listint_t **list)
 	listint_t *change1, *change2, *afchange2, *bfchange1;
 
 	change1 = *list;
-	change2 = *change1->next;
-	afchange2 = *change2->next;
-	bfchange1 = *change1->prev;
+	change2 = change1->next;
+	afchange2 = change2->next;
+	bfchange1 = change1->prev;
 	
 	if (list != NULL)
 	{
@@ -29,7 +29,7 @@ void insertion_sort_list(listint_t **list)
 				if (bfchange1 != NULL)
 					bfchange1->next = change2;
 					
-				change1 = list;
+				change1 = *list;
 				print_list(*list);	
 			}
 			else
