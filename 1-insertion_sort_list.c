@@ -11,13 +11,11 @@ void insertion_sort_list(listint_t **list)
 	listint_t *change1, *change2, *afchange2, *bfchange1;
 
 	change1 = *list;
+	if (change1->next == NULL)
+		return;
 	change2 = change1->next;
 	afchange2 = change2->next;
 	bfchange1 = change1->prev;
-	if (change1->next == NULL)
-	{ }
-	else
-	{
 	if (list != NULL)
 	{
 		while (change1->next != NULL)
