@@ -13,13 +13,13 @@ void insertion_sort_list(listint_t **list)
 	change2 = change1->next;
 	afchange2 = change2->next;
 	bfchange1 = change1->prev;
-
+	
 	if (list != NULL)
 	{
 		while (change1->next != NULL)
 		{
 			if (change1->n > change2->n)
-			{
+			{ 	
 
 				change2->prev = bfchange1;
 				change2->next = change1;
@@ -32,25 +32,21 @@ void insertion_sort_list(listint_t **list)
 				else
 				{
 					*list = change2;
-				}
-
+				}	
+				
 				change2 = change1->next;
 				afchange2 = change2->next;
 				bfchange1 = change1->prev;
 				print_list(*list);
 			}
-			else 
-			{	
-				printf("1");
+			else
+			{
 				change1 = change1->next;
-				printf("2");
 				change2 = change1->next;
-				printf("3");
 				afchange2 = change2->next;
-				printf("4");
 				bfchange1 = change1->prev;
-				printf("5");
 			}
 		}
 	}
 }
+
