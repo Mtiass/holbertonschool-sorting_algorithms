@@ -16,7 +16,7 @@ void insertion_sort_list(listint_t **list)
 	bfchange1 = change1->prev;
 	if (change1->next == NULL)
 	{
-		return;}
+		return; }
 	if (list != NULL)
 	{
 		while (change1->next != NULL)
