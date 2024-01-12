@@ -15,8 +15,9 @@ void insertion_sort_list(listint_t **list)
 	afchange2 = change2->next;
 	bfchange1 = change1->prev;
 	if (change1->next == NULL)
+	{ }
+	else
 	{
-		return; }
 	if (list != NULL)
 	{
 		while (change1->next != NULL)
@@ -45,4 +46,4 @@ void insertion_sort_list(listint_t **list)
 				{
 					change2 = change1->next;
 					afchange2 = change2->next;
-					bfchange1 = change1->prev; } } } } }
+					bfchange1 = change1->prev; } } } } } }
