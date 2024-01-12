@@ -32,9 +32,8 @@ void insertion_sort_list(listint_t **list)
 				else
 				{
 					*list = change2;
-				}	
-				
-			
+				}
+				change1 = *list;
 				change2 = change1->next;
 				afchange2 = change2->next;
 				bfchange1 = change1->prev;
