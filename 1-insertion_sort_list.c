@@ -7,22 +7,38 @@
 */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *actual, *auxprev, *auxnext;
+	listint_t *change1, *change2, *afchange2, *bfchange1;
 
-	actual = *list;
-
-	while (actual->next != NULL)
+	change1 = *list;
+	change2 = *change1->next;
+	afchange2 = *change2->next;
+	bfchange1 = *change1->prev;
+	
+	if (list != NULL)
 	{
-		auxnext = actual->next;
-		if (actual->n > actual->next->n)
+		while (change1->next != NULL)
 		{
-			auxprev = actual->prev;
-			actual->prev = actual->next;
-			actual->next = actual->next->next;
-			auxnext->prev = auxprev;
-			auxnext->next = actual;
-			print_list(*list);
+			if (change1->n > change2->n)
+			{ 	
+
+				change2->prev = bfchange1;
+				change2->next = change1;
+				afchange2->prev = change1;
+				change1->next = afchange2;
+				change1->prev = change2;
+				if (bfchange1 != NULL)
+					bfchange1->next = change2;
+					
+				change1 = list;
+				print_list(*list);	
+			}
+			else
+			{
+				change1 = change1->next;
+				change2 = change1->next;
+			}
+			
 		}
-		actual = auxnext;
 	}
 }
+
