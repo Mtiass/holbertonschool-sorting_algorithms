@@ -39,7 +39,7 @@ void insertion_sort_list(listint_t **list)
 				bfchange1 = change1->prev;
 				print_list(*list);
 			}
-			else
+			else if (change1->next != NULL)
 			{
 				change1 = change1->next;
 				change2 = change1->next;
