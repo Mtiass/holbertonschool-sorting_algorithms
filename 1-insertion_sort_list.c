@@ -23,7 +23,8 @@ void insertion_sort_list(listint_t **list)
 
 				change2->prev = bfchange1;
 				change2->next = change1;
-				afchange2->prev = change1;
+				if (afchange2 != NULL)
+					afchange2->prev = change1;
 				change1->next = afchange2;
 				change1->prev = change2;
 				if (bfchange1 != NULL)
