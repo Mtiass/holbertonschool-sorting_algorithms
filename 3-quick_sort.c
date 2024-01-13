@@ -23,7 +23,8 @@ int lomuto(int *array, int start, int end, size_t size)
 				temp = array[count];
 				array[count] = array[count2];
 				array[count2] = temp;
-				print_array(array, size);
+				if (array[count] != array[count2])
+					print_array(array, size);
 			}
 			count2++;
 		}
@@ -33,7 +34,8 @@ int lomuto(int *array, int start, int end, size_t size)
 		temp = array[count2];
 		array[count2] = array[pivot];
 		array[pivot] = temp;
-		print_array(array, size);
+		if (array[count] != array[count2])
+			print_array(array, size);
 	}
 	return (count2);
 }
