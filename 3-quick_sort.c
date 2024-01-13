@@ -12,8 +12,8 @@
 */
 int lomuto(int *array, int start, int end, size_t size)
 {
-	size_t count, pivot = end, count2 = 0;
-	int temp;
+    size_t pivot = end, count2 = 0;
+	int temp, count;
 
 	for (count = start; count < end - 1; count++)
 	{
