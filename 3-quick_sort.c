@@ -14,7 +14,7 @@ int lomuto(int *array, int start, int end, size_t size)
 {
 	int temp, count, count2 = start, pivot = end;
 
-	for (count = start; count < end - 1; count++)
+	for (count = start; count < end; count++)
 	{
 		if (array[count] < array[end])
 		{
