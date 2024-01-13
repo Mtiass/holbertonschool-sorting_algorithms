@@ -1,5 +1,5 @@
 #include "sort.h"
-/*
+/**
 * lomuto - divides an array in two different parts,
 * leaving the values lower than pivot on the left,
 * and the values higher than pivot on the right.
@@ -35,9 +35,9 @@ int lomuto(int *array, int start, int end, size_t size)
 		array[pivot] = temp;
 		print_array(array, size);
 	}
-	return(count2);
+	return (count2);
 }
-/*
+/**
 * quick_sort - sorts an array of integers in ascending order
 * using the Quick sort algorithm.
 * @array: array to be sorted.
@@ -51,7 +51,7 @@ void quick_sort(int *array, size_t size)
 
 	recursive_sort(array, 0, size - 1, size);
 }
-/*
+/**
 * recursive_sort - function to sort an array recursively.
 * @array: array to be sorted.
 * @start: start of the array.
@@ -61,10 +61,12 @@ void quick_sort(int *array, size_t size)
 */
 void recursive_sort(int *array, int start, int end, size_t size)
 {
+	int pivot;
+
 	if (end > start)
 	{
-	int pivot = lomuto(array, start, end, size);
-	recursive_sort(array, start, pivot - 1, size);
-	recursive_sort(array, pivot + 1, end, size);
+		pivot = lomuto(array, start, end, size);
+	   	recursive_sort(array, start, pivot - 1, size);
+		recursive_sort(array, pivot + 1, end, size);
 	}
 }
