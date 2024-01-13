@@ -16,7 +16,7 @@ int lomuto(int *array, int start, int end, size_t size)
 
 	for (count = start; count < end - 1; count++)
 	{
-		if (array[count] < array[pivot])
+		if (array[count] < array[end])
 		{
 			if (count != count2)
 			{
@@ -35,6 +35,7 @@ int lomuto(int *array, int start, int end, size_t size)
 		array[pivot] = temp;
 		print_array(array, size);
 	}
+    pivot = count2;
 	return(pivot);
 }
 /*
