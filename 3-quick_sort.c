@@ -34,8 +34,8 @@ int lomuto(int *array, int start, int end, size_t size)
 		array[count2] = array[pivot];
 		array[pivot] = temp;
 		print_array(array, size);
+        pivot = count2;
 	}
-    pivot = count2;
 	return(pivot);
 }
 /*
