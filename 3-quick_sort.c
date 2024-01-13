@@ -34,9 +34,8 @@ int lomuto(int *array, int start, int end, size_t size)
 		array[count2] = array[pivot];
 		array[pivot] = temp;
 		print_array(array, size);
-        pivot = count2;
 	}
-	return(pivot);
+	return(count2);
 }
 /*
 * quick_sort - sorts an array of integers in ascending order
