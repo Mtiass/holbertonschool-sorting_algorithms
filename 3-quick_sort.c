@@ -66,7 +66,7 @@ void recursive_sort(int *array, int start, int end, size_t size)
 	if (end > start)
 	{
 		pivot = lomuto(array, start, end, size);
-	   	recursive_sort(array, start, pivot - 1, size);
+		recursive_sort(array, start, pivot - 1, size);
 		recursive_sort(array, pivot + 1, end, size);
 	}
 }
